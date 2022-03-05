@@ -7,7 +7,7 @@ namespace Mango.Web
 {
     public static class SD
     {
-        //satatic values 
+        //satatic values #
         public static string ProductAPIBase { get; set; }
         public static string ShoppingCartAPIBase { get; set; }
         public static string CouponAPIBase { get; set; }
