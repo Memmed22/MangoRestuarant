@@ -64,9 +64,8 @@ namespace Mango.Services.ProductAPI.Repository
         {
             List<Product> productList = await _context.Product.ToListAsync();
 
+
             return _mapper.Map<List<ProductDto>>(productList);
-
-
         }
     }
 }

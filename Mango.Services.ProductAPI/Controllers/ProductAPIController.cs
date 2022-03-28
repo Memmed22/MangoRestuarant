@@ -30,6 +30,7 @@ namespace Mango.Services.ProductAPI.Controllers
             {
                 IEnumerable<ProductDto> productDtoList = await _productRepository.GetProducts();
                 _responseDto.Result = productDtoList;
+                _responseDto.IsSuccess = true;
             }
             catch (Exception ex)
             { 
@@ -72,7 +73,7 @@ namespace Mango.Services.ProductAPI.Controllers
             catch (Exception ex)
             {
                 _responseDto.ErrorMessage = new List<string>() { ex.Message };
-                _responseDto.IsSuccess = true;
+                _responseDto.IsSuccess = false ;
             }
             return _responseDto;
         }
@@ -87,7 +88,7 @@ namespace Mango.Services.ProductAPI.Controllers
             catch (Exception ex)
             {
                 _responseDto.ErrorMessage = new List<string>() { ex.Message };
-                _responseDto.IsSuccess = true;
+                _responseDto.IsSuccess = false;
             }
             return _responseDto;
         }
@@ -97,7 +98,7 @@ namespace Mango.Services.ProductAPI.Controllers
         [Authorize(Roles ="Admin")]
         public async Task<object> Delete(int id)
         {
-            var user = User.Claims.ToList();
+            //var user = User.Claims.ToList();
         
             try
             {
@@ -106,7 +107,7 @@ namespace Mango.Services.ProductAPI.Controllers
             catch (Exception ex)
             {
                 _responseDto.ErrorMessage = new List<string>() { ex.Message };
-                _responseDto.IsSuccess = true;
+                _responseDto.IsSuccess = false;
             }
             return _responseDto;
         }

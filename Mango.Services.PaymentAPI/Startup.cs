@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 namespace Mango.Services.PaymentAPI
 {
     public class Startup
-    {
+    { 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
